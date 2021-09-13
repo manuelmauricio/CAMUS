@@ -1,24 +1,28 @@
-const UserSchema = new mongoose.Schema({
-    nickname: {
-        type: String,
+const MensajeSchema = new mongoose.Schema({
+    id_mensaje: {
+        type: Number,
         required: true,
-        minlength: 4,
-        maxlength: 20,
+        default: 1,
         unique: true
     },
-    name: {
-        type: String,
-        required: true,
-        minlength: 4,
-        maxlength: 20
-    },
-    year: {
+    idfk_remitente: {
         type: Number,
         required: true,
         default: 1
+    },
+    idfk_destinatario: {
+        type: Number,
+        required: true,
+        default: 1
+    },
+    texto: {
+        type: String,
+        required: true,
+        minlength: 0,
+        maxlength: 400
     }
     
 })
 
-const User = mongoose.model('user', UserSchema);
-module.exports = User;
+const Mensaje = mongoose.model('mensaje', MensajeSchema);
+module.exports = Mensaje;

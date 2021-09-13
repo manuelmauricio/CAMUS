@@ -1,18 +1,16 @@
-const UserSchema = new mongoose.Schema({
-    nickname: {
-        type: String,
+const UsuarioCategoriaSchema = new mongoose.Schema({
+    id_usuariocategoria: {
+        type: Number,
         required: true,
-        minlength: 4,
-        maxlength: 20,
+        default: 1,
         unique: true
     },
-    name: {
-        type: String,
+    idfk_usuario: {
+        type: Number,
         required: true,
-        minlength: 4,
-        maxlength: 20
+        default: 1
     },
-    year: {
+    idfk_categoria: {
         type: Number,
         required: true,
         default: 1
@@ -20,5 +18,5 @@ const UserSchema = new mongoose.Schema({
     
 })
 
-const User = mongoose.model('user', UserSchema);
-module.exports = User;
+const UsuarioCategoria = mongoose.model('usuariocategoria', UsuarioCategoriaSchema);
+module.exports = UsuarioCategoria;

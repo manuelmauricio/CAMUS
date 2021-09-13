@@ -2,7 +2,8 @@ const UsuarioSchema = new mongoose.Schema({
     id_usr: {
         type: Number,
         required: true,
-        default: 1
+        default: 1,
+        unique: true
     },
     usr: {
         type: String,
@@ -15,8 +16,13 @@ const UsuarioSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 4,
-        maxlength: 20,
-        unique: true
+        maxlength: 20
+    },
+    nombre: {
+        type: String,
+        required: true,
+        minlength: 4,
+        maxlength: 40
     },
     fecha_nacimiento: {
         type: Date,
@@ -49,6 +55,13 @@ const UsuarioSchema = new mongoose.Schema({
     fecha_alta: {
         type: Date,
         required: true
+    },
+    imagenchar: {
+        type: String,
+        required: true,
+        minlength: 3,
+        maxlength: 30,
+        unique: true
     },
     rol: {
         type: Number,

@@ -1,24 +1,23 @@
-const UserSchema = new mongoose.Schema({
-    nickname: {
-        type: String,
+const PadecimientoSchema = new mongoose.Schema({
+    id_padecimientos: {
+        type: Number,
         required: true,
-        minlength: 4,
-        maxlength: 20,
+        default: 1,
         unique: true
     },
-    name: {
-        type: String,
-        required: true,
-        minlength: 4,
-        maxlength: 20
-    },
-    year: {
+    idfk_paciente: {
         type: Number,
         required: true,
         default: 1
+    },
+    texto: {
+        type: String,
+        required: true,
+        minlength: 0,
+        maxlength: 400
     }
     
 })
 
-const User = mongoose.model('user', UserSchema);
-module.exports = User;
+const Padecimiento = mongoose.model('padecimiento', PadecimientoSchema);
+module.exports = Padecimiento;

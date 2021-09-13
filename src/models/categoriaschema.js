@@ -1,24 +1,27 @@
-const UserSchema = new mongoose.Schema({
-    nickname: {
-        type: String,
-        required: true,
-        minlength: 4,
-        maxlength: 20,
-        unique: true
-    },
-    name: {
-        type: String,
-        required: true,
-        minlength: 4,
-        maxlength: 20
-    },
-    year: {
+const CategoriaSchema = new mongoose.Schema({
+    id_cat: {
         type: Number,
         required: true,
-        default: 1
+        default: 1,
+        unique: true
+    },
+    nombre: {
+        type: String,
+        required: true,
+        minlength: 4,
+        maxlength: 40
+    },
+    descripcion: {
+        type: String,
+        minlength: 0,
+        maxlength: 200
+    },
+    fecha_alta: {
+        type: Date,
+        required: true
     }
     
 })
 
-const User = mongoose.model('user', UserSchema);
-module.exports = User;
+const Categoria = mongoose.model('categoria', CategoriaSchema);
+module.exports = Categoria;

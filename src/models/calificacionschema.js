@@ -1,24 +1,28 @@
-const UserSchema = new mongoose.Schema({
-    nickname: {
-        type: String,
+const CalificacionSchema = new mongoose.Schema({
+    id_calificacion: {
+        type: Number,
         required: true,
-        minlength: 4,
-        maxlength: 20,
+        default: 1,
         unique: true
     },
-    name: {
-        type: String,
-        required: true,
-        minlength: 4,
-        maxlength: 20
-    },
-    year: {
+    idfk_doctor: {
         type: Number,
         required: true,
         default: 1
+    },
+    calificacion: {
+        type: Number,
+        required: true,
+        default: 1
+    },
+    texto: {
+        type: String,
+        required: true,
+        minlength: 0,
+        maxlength: 400
     }
     
 })
 
-const User = mongoose.model('user', UserSchema);
-module.exports = User;
+const Calificacion = mongoose.model('calificacion', CalificacionSchema);
+module.exports = Calificacion;
