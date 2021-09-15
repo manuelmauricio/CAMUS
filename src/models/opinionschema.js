@@ -1,5 +1,5 @@
-const CalificacionSchema = new mongoose.Schema({
-    id_calificacion: {
+const OpinioncionSchema = new mongoose.Schema({
+    id_opinion: {
         type: Number,
         required: true,
         default: 1,
@@ -7,7 +7,6 @@ const CalificacionSchema = new mongoose.Schema({
     },
     idfk_doctor: {
         type: Number,
-        required: true,
         default: 1
     },
     calificacion: {
@@ -24,5 +23,5 @@ const CalificacionSchema = new mongoose.Schema({
     
 })
 
-const Calificacion = mongoose.model('calificacion', CalificacionSchema);
-module.exports = Calificacion;
+const pinioncion = mongoose.model('opinion', pinioncionSchema);
+module.exports = pinioncion;

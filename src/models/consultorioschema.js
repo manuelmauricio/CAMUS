@@ -1,5 +1,5 @@
-const DependenciaSchema = new mongoose.Schema({
-    id_dependencia: {
+const ConsultorioSchema = new mongoose.Schema({
+    id_consultorio: {
         type: Number,
         required: true,
         default: 1,
@@ -23,5 +23,5 @@ const DependenciaSchema = new mongoose.Schema({
     
 })
 
-const Dependencia = mongoose.model('dependencia', DependenciaSchema);
-module.exports = Dependencia;
+const Consultorio = mongoose.model('consultorio', ConsultorioSchema);
+module.exports = Consultorio;
