@@ -2,11 +2,13 @@ const mongoose = require('mongoose')
 
 const MensajeSchema = new mongoose.Schema({
     idfk_remitente: {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'usuario',
         required: true
     },
     idfk_destinatario: {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'usuario',
         required: true
     },
     texto: {

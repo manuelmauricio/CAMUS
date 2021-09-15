@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 const AnalisisSchema = new mongoose.Schema({
     idfk_paciente: {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'especialidad',
         required: true
     },
     asunto: {
