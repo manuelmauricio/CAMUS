@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
-const NotaMedicaSchema = new mongoose.Schema({
-    idfk_doctor: {
-        type: Number,
-        required: true
-    },
+const AnalisisSchema = new mongoose.Schema({
     idfk_paciente: {
         type: Number,
         required: true
@@ -22,10 +18,9 @@ const NotaMedicaSchema = new mongoose.Schema({
         maxlength: 400
     },
     fecha: {
-        type: Date,
-        required: true
+        type: Date
     }
 })
 
-const NotaMedica = mongoose.model('notamedica', NotaMedicaSchema);
-module.exports = NotaMedica;
+const Analisis = mongoose.model('analisis', AnalisisSchema);
+module.exports = Analisis;

@@ -38,6 +38,7 @@ exports.user_getbyid = async (req,res) =>{
 
 exports.user_delete = async (req,res) =>{
     const {id} = req.params;
-    await User.deleteOne({_id: id});
+    await User.deleteOne({_id: id})
+    .catch((err) => console.log("ERROR:", err));
     res.send({message: "Registro Borrado"});
 };

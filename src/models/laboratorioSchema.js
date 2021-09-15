@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const ConsultorioSchema = new mongoose.Schema({
+const LaboratorioSchema = new mongoose.Schema({
     ubicacion: {
         type: String,
         required: true,
@@ -19,7 +19,7 @@ const ConsultorioSchema = new mongoose.Schema({
         minlength: 4,
         maxlength: 20
     },
-    imagen_consultorio: {
+    imagen_laboratorio: {
         type: String
     },
     precio_consulta: {
@@ -30,5 +30,5 @@ const ConsultorioSchema = new mongoose.Schema({
     }
 })
 
-const Consultorio = mongoose.model('consultorio', ConsultorioSchema);
-module.exports = Consultorio;
+const Laboratorio = mongoose.model('laboratorio', LaboratorioSchema);
+module.exports = Laboratorio;

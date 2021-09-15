@@ -1,13 +1,9 @@
+const mongoose = require('mongoose')
+
 const OpinioncionSchema = new mongoose.Schema({
-    id_opinion: {
-        type: Number,
-        required: true,
-        default: 1,
-        unique: true
-    },
     idfk_doctor: {
         type: Number,
-        default: 1
+        required: true
     },
     calificacion: {
         type: Number,
@@ -17,11 +13,10 @@ const OpinioncionSchema = new mongoose.Schema({
     texto: {
         type: String,
         required: true,
-        minlength: 0,
+        minlength: 10,
         maxlength: 400
-    }
-    
+    }  
 })
 
-const pinioncion = mongoose.model('opinion', pinioncionSchema);
-module.exports = pinioncion;
+const Opinion = mongoose.model('opinion', OpinioncionSchema);
+module.exports = Opinion;

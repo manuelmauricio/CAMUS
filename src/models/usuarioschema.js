@@ -1,18 +1,14 @@
+const mongoose = require('mongoose')
+
 const UsuarioSchema = new mongoose.Schema({
-    id_usr: {
-        type: Number,
-        required: true,
-        default: 1,
-        unique: true
-    },
-    usr: {
+    username: {
         type: String,
         required: true,
         minlength: 4,
         maxlength: 20,
         unique: true
     },
-    pass: {
+    password: {
         type: String,
         required: true,
         minlength: 4,
@@ -22,53 +18,41 @@ const UsuarioSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 4,
-        maxlength: 40
+        maxlength: 80
     },
     fecha_nacimiento: {
         type: Date,
         required: true
     },
-    tel1: {
-        type: Number,
-        default: 0
-    },
-    tel2: {
-        type: Number,
-        default: 0
-    },
-    tel1: {
-        type: Number,
-        default: 0
-    },
-    notas: {
-        type: String,
-        minlength: 0,
-        maxlength: 500
-    },
     email: {
         type: String,
         required: true,
-        minlength: 3,
-        maxlength: 30,
+        minlength: 4,
+        maxlength: 80,
         unique: true
-    },
-    fecha_alta: {
-        type: Date,
-        required: true
     },
     imagenchar: {
-        type: String,
-        required: true,
-        minlength: 3,
-        maxlength: 30,
-        unique: true
+        type: String
     },
     rol: {
         type: Number,
+        required: true,
         default: 0
-    }
-    
+    },
+    fkespecialidad:{
+        type: Number
+    },
+    consultorio: {
+        type: String,
+        minlength: 4,
+        maxlength: 80
+    },
+    descripcion: {
+        type: String,
+        minlength: 4,
+        maxlength: 400
+    }   
 })
 
-const Usuario = mongoose.model('usuario', UauarioSchema);
+const Usuario = mongoose.model('usuario', UsuarioSchema);
 module.exports = Usuario;
