@@ -41,7 +41,7 @@ const UsuarioSchema = new mongoose.Schema({
     },
     fkespecialidad:{
         type: mongoose.Schema.Types.ObjectId,
-        ref:'especialidad',
+        ref:'especialidad'
     },
     consultorio: {
         type: String,
