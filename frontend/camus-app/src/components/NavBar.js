@@ -77,13 +77,12 @@ export default function NavBar(props) {
         <Toolbar >
         <Grid container spacing={3}>
             <Grid item xs={4}>
-                <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ display: { xs: 'none', sm: 'block' } }}>
-                (Logo here) CAMUS 
-            </Typography>
+            <img
+            src='LogoCamus.png'
+            alt="CAMUS"
+            loading="Camus"
+            />
+              
             </Grid>
             <Grid item xs={4}>
 
