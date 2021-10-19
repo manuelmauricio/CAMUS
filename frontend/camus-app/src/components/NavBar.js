@@ -3,20 +3,12 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MoreIcon from '@mui/icons-material/MoreVert';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import { List, ListItem, ListItemText } from '@mui/material';
+import { List } from '@mui/material';
 import { Link } from 'react-router-dom';
-import MuiDrawer from '@mui/material/Drawer';
 
 
 
@@ -34,6 +26,7 @@ const Search = styled('div')(({ theme }) => ({
     marginLeft: theme.spacing(3),
     width: 'auto',
   },
+  marginTop:"10px",
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -61,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const ColorButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText("#4d9296"),
+    color: "#b5d1d3",
     backgroundColor: "#4d9296",
     '&:hover': {
       backgroundColor: "#23585b",
@@ -69,7 +62,6 @@ const ColorButton = styled(Button)(({ theme }) => ({
   }));
 
 export default function NavBar(props) {
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -77,17 +69,23 @@ export default function NavBar(props) {
         <Toolbar >
         <Grid container spacing={3}>
             <Grid item xs={4}>
-            <img
-            src='LogoCamus.png'
-            alt="CAMUS"
-            loading="Camus"
-            />
+            <a href="/">
+              <img
+              src='LogoCamus.png'
+              alt="CAMUS"
+              loading="Camus"
+              />
+            </a>
               
             </Grid>
             <Grid item xs={4}>
 
                 <List>
                 {[
+                    {
+                      text: "Inicio",
+                      url: "/",
+                    },
                     {
                         text: "Conócenos",
                         url: "/Conocenos",
@@ -126,7 +124,7 @@ export default function NavBar(props) {
                 />
           </Search>
           
-          <Button color="inherit">Iniciar Sesión</Button>
+          <ColorButton variant="text"component={Link} to={"/login"}>Iniciar Sesión</ColorButton>  
           </Box>
           
 
@@ -134,9 +132,10 @@ export default function NavBar(props) {
         </Grid>
         </Toolbar>
       </AppBar>
-            
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        
+      <img src='LogoCamus.png' alt="CAMUS" loading="Camus" width="100%" height="200px"/>
+
+      <Box component="main">
+      
         {props.children}
       </Box>
     </Box>
