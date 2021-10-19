@@ -2,11 +2,13 @@ const mongoose = require('mongoose')
 
 const NotaMedicaSchema = new mongoose.Schema({
     idfk_doctor: {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'usuario',
         required: true
     },
     idfk_paciente: {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'especialidad',
         required: true
     },
     asunto: {

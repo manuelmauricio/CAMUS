@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 const OpinioncionSchema = new mongoose.Schema({
     idfk_doctor: {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'usuario',
         required: true
     },
     calificacion: {
