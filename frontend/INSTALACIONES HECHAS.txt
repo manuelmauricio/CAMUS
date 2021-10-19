@@ -1,0 +1,12 @@
+.../frontend/
+npx create-react-app camus-app
+
+
+
+.../frontend/camus-app/
+npm install -g yarn
+yarn add react-router-dom
+yarn add @mui/material @mui/styled-engine-sc styled-components
+yarn add @mui/icons-material
+yarn add @emotion/react @emotion/styled
+yarn add react-swipeable-views
