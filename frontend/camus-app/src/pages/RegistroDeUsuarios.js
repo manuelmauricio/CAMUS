@@ -32,12 +32,29 @@ export default function RegistroDeUsuarios() {
   
           <Container>
           <form>
+
+              <FormControl fullWidth sx={{m:1}}>
+              <TextField name="nombre" label="Nombre Completo" variant="outlined" required></TextField>
+              </FormControl>
+
               <FormControl fullWidth sx={{m:1}}>
               <TextField name="username" label="Nombre de Usuario" variant="outlined" required></TextField>
               </FormControl>
   
               <FormControl fullWidth sx={{m:1}}>
-              <TextField name="password" label="Contraseña:" variant="outlined" ></TextField>
+              <TextField type="password" name="password" label="Contraseña" variant="outlined" required ></TextField>
+              </FormControl>
+
+              <FormControl fullWidth sx={{m:1}}>
+              <TextField type="date" name="fecha_nacimiento" label="Fecha de nacimiento" variant="outlined" required ></TextField>
+              </FormControl>
+
+              <FormControl fullWidth sx={{m:1}}>
+              <TextField type="email" name="email" label="Correo electrónico:" variant="outlined" required ></TextField>
+              </FormControl>
+
+              <FormControl fullWidth sx={{m:1}}>
+              <TextField type="file" name="imagenchar" label="Foto de perfil:" variant="outlined" required ></TextField>
               </FormControl>
   
               <FormControl fullWidth sx={{mt:3}}>

@@ -38,7 +38,7 @@ export default function Login() {
             </FormControl>
 
             <FormControl fullWidth sx={{m:1}}>
-            <TextField name="password" label="Contraseña:" variant="outlined" ></TextField>
+            <TextField type="password" name="password" label="Contraseña" variant="outlined" required ></TextField>
             </FormControl>
 
             <FormControl fullWidth sx={{mt:3}}>
