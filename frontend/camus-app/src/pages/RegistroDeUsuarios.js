@@ -9,7 +9,7 @@ import { TextField } from '@mui/material';
 import { FormControl } from '@mui/material';
 import { Container } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 
 
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -51,6 +51,14 @@ export default function RegistroDeUsuarios() {
               </Box>
   
           </form>
+
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <FormControl sx={{m:1}} >
+            <Link to="/login" color="#4d9296">
+              Iniciar Sesión
+            </Link>
+            </FormControl>
+            </Box>
           </Container>
   
         </CardContent>

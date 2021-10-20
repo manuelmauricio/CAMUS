@@ -9,7 +9,7 @@ import { TextField } from '@mui/material';
 import { FormControl } from '@mui/material';
 import { Container } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 
 
 
@@ -53,8 +53,8 @@ export default function Login() {
 
             <Box display="flex" justifyContent="center" alignItems="center">
             <FormControl sx={{m:1}} >
-            <Link href="/RegistroDeUsuarios" color="#4d9296">
-             ¿Aún no tienes cuenta? Registrate aquí.
+            <Link to="/RegistroDeUsuarios" color="#4d9296">
+              ¿Aún no tienes cuenta? Registrate aquí.
             </Link>
             </FormControl>
             </Box>
