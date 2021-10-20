@@ -238,9 +238,9 @@ export default function CenteredTabs() {
             <h1>Categorias</h1>
             <Grid container>
                 <Grid xs>
-                    <Link>- Alergología</Link>
-                    <Link>- Familiar</Link>
-                    <Link>- Nutriología</Link>
+                    <Typography>- Alergología</Typography>
+                    <Typography>- Familiar</Typography>
+                    <Typography>- Nutriología</Typography>
                     <Typography>- Pediatría</Typography>
                 </Grid>
                 <Grid xs>
