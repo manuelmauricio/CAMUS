@@ -5,7 +5,8 @@ import Conocenos from './pages/Conocenos';
 import Servicios from './pages/Servicios';
 import Directorios from './pages/Directorios';
 import Pacientes from './pages/school/Pacientes';
-
+import Login from './pages/Login';
+import RegistroDeUsuarios from './pages/RegistroDeUsuarios';
 import TopBar from './components/TopBar';
 import { Fragment } from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -24,6 +25,9 @@ function App() {
             <Route exact path="/Directorio" component={Directorios} />
 
             <Route exact path="/Pacientes" component={Pacientes} />
+
+            <Route exact path="/Login" component={Login} />
+            <Route exact path="/RegistroDeUsuarios" component={RegistroDeUsuarios} />
           </Switch>
         </NavBar>
       </Router>
