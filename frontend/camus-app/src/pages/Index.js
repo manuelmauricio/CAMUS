@@ -14,6 +14,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Container from '@mui/material/Container';
 import { Fragment } from 'react';
+import Grid from '@mui/material/Grid';
+import { Link } from 'react-router-dom';
 
 
 export default function CenteredTabs() {
@@ -119,8 +121,8 @@ export default function CenteredTabs() {
                     sx={{ width: 250, margin:"15px", height:250}}
                     image="/Hospital_A.jpg"
                     variant="outlined"
-                    
-                />
+                    />
+
                     <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
                         <CardContent sx={{ flex: '1 0 auto' }}>
                         <Typography component="div" variant="h4" sx={{color:"#4d9296"}}>
@@ -223,12 +225,33 @@ export default function CenteredTabs() {
             </Container>
          
         </TabPanel>
+
+
         <TabPanel value={value} index={1} dir={theme.direction}>
-            <h1>Clinicas</h1>
+            <Container>
+                <h1>Clinicas</h1>
+            </Container>
         </TabPanel>
+
         <TabPanel value={value} index={2} dir={theme.direction}>
-        <Container fixed>
+        <Container>
             <h1>Categorias</h1>
+            <Grid container>
+                <Grid xs>
+                    <Link>- Alergología</Link>
+                    <Link>- Familiar</Link>
+                    <Link>- Nutriología</Link>
+                    <Typography>- Pediatría</Typography>
+                </Grid>
+                <Grid xs>
+                    <Typography>- Cardiología</Typography>
+                    <Typography>- Neumología</Typography>
+                    <Typography>- Oftamología</Typography>
+                    <Typography>- Dermatología</Typography>
+                </Grid>
+                <Grid xs/>
+                <Grid xs/>
+            </Grid>
             <h2>Resultados</h2>
             <Divider />
             <br/>
@@ -341,8 +364,12 @@ export default function CenteredTabs() {
                     
                 </Container>
         </TabPanel>
+
+
         <TabPanel value={value} index={3} dir={theme.direction}>
-            <h1>Laboratorios</h1>
+            <Container>
+                <h1>Laboratorios</h1>
+            </Container>
         </TabPanel>
 
       </SwipeableViews>
