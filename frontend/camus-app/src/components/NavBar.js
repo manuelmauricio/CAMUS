@@ -132,7 +132,7 @@ export default function NavBar(props) {
         </Grid>
         </Toolbar>
       </AppBar>
-      <img src='LogoCamus.png' alt="CAMUS" loading="Camus" width="100%" height="200px"/>
+      <img src='health_wallpaper.jpg' alt="CAMUS" loading="Camus" width="100%" height="200px"/>
 
       <Box component="main">
       
