@@ -8,45 +8,47 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
+import { Container } from '@mui/material';
+import { Typography } from '@mui/material';
 
 export default function BasicList() {
   return (
-    <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      <nav aria-label="main mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-      <Divider />
-      <nav aria-label="secondary mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Trash" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Spam" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-    </Box>
+    <Container>
+      <Typography component="div" variant="h2" sx={{color:"#4d9296", mt:3}}>
+          SOBRE CAMUS
+      </Typography>
+
+      <img src='banner1.jpg' alt="CAMUS" loading="Camus" width="100%" height="300px"/>
+
+      <Typography component="div" variant="h6" sx={{color:"#4d9296", mt:3}}>
+          ¿QUÉ BUSCAMOS?
+      </Typography>
+      <Typography component="div" sx={{mt:1}}>
+      La innovación en administración y atención medica. Agendar citas de manera rápida y
+segura. Conocer distintas opciones para una
+misma enfermedad o paciente. Conocer el historial medico de un
+paciente.
+      </Typography>
+
+      <Typography component="div" variant="h6" sx={{color:"#4d9296", mt:3}}>
+          PROPÓSITO DE LA APLICACIÓN WEB
+      </Typography>
+      <Typography component="div" sx={{mt:1}}>
+      Basta con unos cuantos clics
+para: Agendar una cita medica con tu doctor, Consultar laboratorios y los análisis y/o estudios que
+podrás realizar, Conocer costos, Direcciones de los hospitales, clínicas, y 
+laboratorios más cercanos, Atención medica online.
+      </Typography>
+
+      <Typography component="div" variant="h6" sx={{color:"#4d9296", mt:3}}>
+      ¿POR QUÉ ES MEJOR LA APP?
+      </Typography>
+      <Typography component="div" sx={{mt:1, mb:1}}>
+      Búsquedas simplificada. Amplio catálogo de médicos de diferentes especialidades. Información sobre las indicaciones
+antes de cualquier examen o análisis a realizar. Acceso fácil y rápido a historiales médico. Facilita el proceso a personas que 
+tienen problemas al encontrar un consultorio acorde a sus necesidades y poder adquisitivo.
+      </Typography>
+
+    </Container>
   );
 }
