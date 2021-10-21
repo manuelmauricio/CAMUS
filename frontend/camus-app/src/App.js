@@ -7,7 +7,7 @@ import Directorios from './pages/Directorios';
 import Pacientes from './pages/school/Pacientes';
 import Login from './pages/Login';
 import RegistroDeUsuarios from './pages/RegistroDeUsuarios';
-import Consultorio from './Consultorio';
+import Consultorio from './pages/Consultorio';
 import TopBar from './components/TopBar';
 import { Fragment } from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";

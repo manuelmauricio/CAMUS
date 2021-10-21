@@ -272,6 +272,9 @@ export default function CenteredTabs() {
                         <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
                             Medico Familiar
                         </Typography>
+                        <Link to="/Consultorio" color="#4d9296">
+                        Ver Consultorio
+                        </Link>
                         <br/>
                         <br/>
                         <Typography component="div">
@@ -299,6 +302,9 @@ export default function CenteredTabs() {
                         <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
                             Medico Familiar
                         </Typography>
+                        <Link to="/Consultorio" color="#4d9296">
+                        Ver Consultorio
+                        </Link>
                         <br/>
                         <br/>
                         <Typography component="div">
@@ -326,6 +332,9 @@ export default function CenteredTabs() {
                         <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
                             Medico Familiar
                         </Typography>
+                        <Link to="/Consultorio" color="#4d9296">
+                        Ver Consultorio
+                        </Link>
                         <br/>
                         <br/>
                         <Typography component="div">
@@ -352,6 +361,9 @@ export default function CenteredTabs() {
                         <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
                             Medico Familiar
                         </Typography>
+                        <Link to="/Consultorio" color="#4d9296">
+                        Ver Consultorio
+                        </Link>
                         <br/>
                         <br/>
                         <Typography component="div">
