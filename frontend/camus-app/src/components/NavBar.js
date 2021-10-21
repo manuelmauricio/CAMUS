@@ -91,16 +91,22 @@ export default function NavBar(props) {
                         url: "/Conocenos",
                     },
                     {
+                      /* 
                         text: "Servicios",
                         url: "/Servicios",
+                      */
                     },
                     {
+                      /*
                         text: "Directorio",
                         url: "/Directorio",
+                      */  
                     },
                     {
+                      /*
                         text: "Pacientes",
                         url: "/Pacientes",
+                      */
                     },
                 ].map((item, index) => (
                     <ColorButton variant="text"component={Link} to={item.url}>{item.text}</ColorButton>                
