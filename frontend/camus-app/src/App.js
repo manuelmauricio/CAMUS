@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import RegistroDeUsuarios from './pages/RegistroDeUsuarios';
 import Consultorio from './pages/Consultorio';
 import ModificarPerfilMedico from './pages/ModificarPerfilMedico';
+import Laboratorio from './pages/Laboratorio';
 import TopBar from './components/TopBar';
 import { Fragment } from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -32,6 +33,7 @@ function App() {
             <Route exact path="/RegistroDeUsuarios" component={RegistroDeUsuarios} />
             <Route exact path="/Consultorio" component={Consultorio} />
             <Route exact path="/ModificarPerfilMedico" component={ModificarPerfilMedico} />
+            <Route exact path="/Laboratorio" component={Laboratorio} />
           </Switch>
         </NavBar>
       </Router>
