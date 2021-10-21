@@ -230,6 +230,114 @@ export default function CenteredTabs() {
         <TabPanel value={value} index={1} dir={theme.direction}>
             <Container>
                 <h1>Clinicas</h1>
+
+                <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                    component="img"
+                    sx={{ width: 250, margin:"15px", height:250}}
+                    image="/clinica_placeholder.jpg"
+                    variant="outlined"
+                    />
+
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
+                        <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Typography component="div" variant="h4" sx={{color:"#4d9296"}}>
+                        Clinica_A
+                        </Typography>
+                        <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
+                        Clinica
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography component="div">
+                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
+                        </Typography>
+                        </CardContent>
+                    </Box>
+                    </Card>
+                    <br/>
+
+
+                    <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                    component="img"
+                    sx={{ width: 250, margin:"15px", height:250}}
+                    image="/clinica_placeholder.jpg"
+                    variant="outlined"
+                    
+                />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
+                        <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Typography component="div" variant="h4" sx={{color:"#4d9296"}}>
+                        Clinica_B
+                        </Typography>
+                        <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
+                        Clinica
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography component="div">
+                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
+                        </Typography>
+                        </CardContent>
+                    </Box>
+                    </Card>
+                    <br/>
+
+
+                    <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                    component="img"
+                    sx={{ width: 250, margin:"15px", height:250}}
+                    image="/clinica_placeholder.jpg"
+                    variant="outlined"
+                    
+                />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
+                        <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Typography component="div" variant="h4" sx={{color:"#4d9296"}}>
+                        Clinica_C
+                        </Typography>
+                        <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
+                        Clinica
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography component="div">
+                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
+                        </Typography>
+                        </CardContent>
+                    </Box>
+                    </Card>
+                    <br/>
+
+                    <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                    component="img"
+                    sx={{ width: 250, margin:"15px", height:250}}
+                    image="/clinica_placeholder.jpg"
+                    variant="outlined"
+                    
+                />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
+                        <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Typography component="div" variant="h4" sx={{color:"#4d9296"}}>
+                        Clinica_D
+                        </Typography>
+                        <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
+                        Clinica
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography component="div">
+                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
+                        </Typography>
+                        </CardContent>
+                    </Box>
+                    </Card>
+                    <br/>
+
+
             </Container>
         </TabPanel>
 
@@ -381,6 +489,113 @@ export default function CenteredTabs() {
         <TabPanel value={value} index={3} dir={theme.direction}>
             <Container>
                 <h1>Laboratorios</h1>
+
+                <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                    component="img"
+                    sx={{ width: 250, margin:"15px", height:250}}
+                    image="/laboratorio_placeholder.jpg"
+                    variant="outlined"
+                    />
+
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
+                        <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Typography component="div" variant="h4" sx={{color:"#4d9296"}}>
+                        Laboratorio_A
+                        </Typography>
+                        <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
+                        Laboratorio
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography component="div">
+                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
+                        </Typography>
+                        </CardContent>
+                    </Box>
+                    </Card>
+                    <br/>
+
+
+                    <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                    component="img"
+                    sx={{ width: 250, margin:"15px", height:250}}
+                    image="/laboratorio_placeholder.jpg"
+                    variant="outlined"
+                    
+                />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
+                        <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Typography component="div" variant="h4" sx={{color:"#4d9296"}}>
+                        Laboratorio_B
+                        </Typography>
+                        <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
+                        Laboratorio
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography component="div">
+                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
+                        </Typography>
+                        </CardContent>
+                    </Box>
+                    </Card>
+                    <br/>
+
+
+                    <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                    component="img"
+                    sx={{ width: 250, margin:"15px", height:250}}
+                    image="/laboratorio_placeholder.jpg"
+                    variant="outlined"
+                    
+                />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
+                        <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Typography component="div" variant="h4" sx={{color:"#4d9296"}}>
+                        Laboratorio_C
+                        </Typography>
+                        <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
+                        Laboratorio
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography component="div">
+                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
+                        </Typography>
+                        </CardContent>
+                    </Box>
+                    </Card>
+                    <br/>
+
+                    <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                    component="img"
+                    sx={{ width: 250, margin:"15px", height:250}}
+                    image="/laboratorio_placeholder.jpg"
+                    variant="outlined"
+                    
+                />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
+                        <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Typography component="div" variant="h4" sx={{color:"#4d9296"}}>
+                        Laboratorio_D
+                        </Typography>
+                        <Typography variant="subtitle1" component="div" sx={{fontWeight:800}}>
+                        Laboratorio
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography component="div">
+                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
+                        </Typography>
+                        </CardContent>
+                    </Box>
+                    </Card>
+                    <br/>
+
             </Container>
         </TabPanel>
 
