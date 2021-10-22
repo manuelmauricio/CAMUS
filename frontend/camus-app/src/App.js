@@ -11,6 +11,12 @@ import Consultorio from './pages/Consultorio';
 import ModificarPerfilMedico from './pages/ModificarPerfilMedico';
 import Laboratorio from './pages/Laboratorio';
 import FormularioLaboratorio from './pages/FormularioLaboratorio';
+import FormularioAnalisis from './pages/FormularioAnalisis';
+import FormularioCita from './pages/FormularioCita';
+import FormularioEspecialidad from './pages/FormularioEspecialidad';
+import FormularioMensaje from './pages/FormularioMensaje';
+import FormularioNotaMedica from './pages/FormularioNotaMedica';
+import FormularioPadecimiento from './pages/FormularioPadecimiento';
 import TopBar from './components/TopBar';
 import { Fragment } from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -36,6 +42,13 @@ function App() {
             <Route exact path="/ModificarPerfilMedico" component={ModificarPerfilMedico} />
             <Route exact path="/Laboratorio" component={Laboratorio} />
             <Route exact path="/FormularioLaboratorio" component={FormularioLaboratorio} />
+            <Route exact path="/FormularioAnalisis" component={FormularioAnalisis} />
+            <Route exact path="/FormularioCita" component={FormularioCita} />
+            <Route exact path="/FormularioEspecialidad" component={FormularioEspecialidad} />
+            <Route exact path="/FormularioMensaje" component={FormularioMensaje} />
+            <Route exact path="/FormularioNotaMedica" component={FormularioNotaMedica} />
+            <Route exact path="/FormularioPadecimiento" component={FormularioPadecimiento} />
+            
           </Switch>
         </NavBar>
       </Router>
