@@ -17,6 +17,8 @@ import FormularioEspecialidad from './pages/FormularioEspecialidad';
 import FormularioMensaje from './pages/FormularioMensaje';
 import FormularioNotaMedica from './pages/FormularioNotaMedica';
 import FormularioPadecimiento from './pages/FormularioPadecimiento';
+import ExplorarCategorias from './pages/ExplorarCategorias';
+import ExplorarLaboratorios from './pages/ExplorarLaboratorios';
 import TopBar from './components/TopBar';
 import { Fragment } from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -48,6 +50,8 @@ function App() {
             <Route exact path="/FormularioMensaje" component={FormularioMensaje} />
             <Route exact path="/FormularioNotaMedica" component={FormularioNotaMedica} />
             <Route exact path="/FormularioPadecimiento" component={FormularioPadecimiento} />
+            <Route exact path="/ExplorarCategorias" component={ExplorarCategorias} />
+            <Route exact path="/ExplorarLaboratorios" component={ExplorarLaboratorios} />
             
           </Switch>
         </NavBar>
