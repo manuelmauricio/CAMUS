@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 require('./src/models/connection');
 
 /*requires de rutas*/
@@ -16,8 +17,9 @@ const usuario_router = require('./src/routers/usuarioRouter');
 
 
 const app = express();
-const port = 3000; // 5000 / 5001
+const port = 5000; // 5000 / 5001
 
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use('/api', analisis_router);

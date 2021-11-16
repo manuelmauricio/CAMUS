@@ -10,3 +10,7 @@ yarn add @mui/material @mui/styled-engine-sc styled-components
 yarn add @mui/icons-material
 yarn add @emotion/react @emotion/styled
 yarn add react-swipeable-views
+yarn add axios
+
+/backend
+npm install cors --save
