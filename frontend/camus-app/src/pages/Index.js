@@ -123,6 +123,9 @@ export default function CenteredTabs() {
                     <Typography>- Familiar</Typography>
                     <Typography>- Nutriología</Typography>
                     <Typography>- Pediatría</Typography>
+                    <Link to="/ExplorarCategorias" color="#4d9296">
+                        Ver Todas las categorías
+                    </Link>
                 </Grid>
                 <Grid xs>
                     <Typography>- Cardiología</Typography>

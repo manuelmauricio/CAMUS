@@ -130,7 +130,7 @@ export default function NavBar(props) {
                 />
           </Search>
           
-          <ColorButton variant="text"component={Link} to={"/login"}>Iniciar Sesión</ColorButton>  
+          <ColorButton variant="text"component={Link} to={"/logout"}>Cerrar Sesión</ColorButton>  
           </Box>
           
 

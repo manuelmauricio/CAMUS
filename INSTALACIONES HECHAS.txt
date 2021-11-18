@@ -3,6 +3,7 @@ npx create-react-app camus-app
 
 
 
+
 .../frontend/camus-app/
 npm install -g yarn
 yarn add react-router-dom
@@ -11,6 +12,9 @@ yarn add @mui/icons-material
 yarn add @emotion/react @emotion/styled
 yarn add react-swipeable-views
 yarn add axios
+npm install @auth0/auth0-react
 
 /backend
 npm install cors --save
+npm install express-jwt
+npm install jwks-rsa

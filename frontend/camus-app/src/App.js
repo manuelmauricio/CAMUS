@@ -5,7 +5,7 @@ import Conocenos from './pages/Conocenos';
 import Servicios from './pages/Servicios';
 import Directorios from './pages/Directorios';
 import Pacientes from './pages/school/Pacientes';
-import Login from './pages/Login';
+//import Login from './pages/Login';
 import RegistroDeUsuarios from './pages/RegistroDeUsuarios';
 import Consultorio from './pages/Consultorio';
 import ModificarPerfilMedico from './pages/ModificarPerfilMedico';
@@ -23,22 +23,29 @@ import TopBar from './components/TopBar';
 import { Fragment } from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
+import PrivateRoute from './components/session/PrivateRoute';
+import Login from './components/session/Login';
+import Logout from './components/session/Logout';
+import history from './utils/History';
+
+
 import NavBar from './components/NavBar';
 
 function App() {
   return (
     <Fragment>
-      <Router>
+      <Router history={history}>
         <NavBar>
           <Switch>
-            <Route exact path="/" component={Index} />
+            <PrivateRoute exact path="/" component={Index} />
             <Route exact path="/Conocenos" component={Conocenos} />
+            <Route exact path="/login" component={Login} exact/>
+            <Route exact path="/logout" component={Logout} exact />
             <Route exact path="/Servicios" component={Servicios} />
             <Route exact path="/Directorio" component={Directorios} />
 
             <Route exact path="/Pacientes" component={Pacientes} />
 
-            <Route exact path="/Login" component={Login} />
             <Route exact path="/RegistroDeUsuarios" component={RegistroDeUsuarios} />
             <Route exact path="/Consultorio" component={Consultorio} />
             <Route exact path="/ModificarPerfilMedico" component={ModificarPerfilMedico} />
@@ -46,11 +53,11 @@ function App() {
             <Route exact path="/FormularioLaboratorio" component={FormularioLaboratorio} />
             <Route exact path="/FormularioAnalisis" component={FormularioAnalisis} />
             <Route exact path="/FormularioCita" component={FormularioCita} />
-            <Route exact path="/FormularioEspecialidad" component={FormularioEspecialidad} />
+            <PrivateRoute exact path="/FormularioEspecialidad" component={FormularioEspecialidad} />
             <Route exact path="/FormularioMensaje" component={FormularioMensaje} />
             <Route exact path="/FormularioNotaMedica" component={FormularioNotaMedica} />
             <Route exact path="/FormularioPadecimiento" component={FormularioPadecimiento} />
-            <Route exact path="/ExplorarCategorias" component={ExplorarCategorias} />
+            <PrivateRoute exact path="/ExplorarCategorias" component={ExplorarCategorias} />
             <Route exact path="/ExplorarLaboratorios" component={ExplorarLaboratorios} />
             
           </Switch>

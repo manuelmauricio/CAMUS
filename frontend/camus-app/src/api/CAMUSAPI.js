@@ -3,7 +3,9 @@ import { axiosBase as axios } from "./Config";
 //COLECCIÓN ESPECIALIDAD
 export const CreateEspecialidad = async (especialidad) => {
     try{
-        const response = await axios.post("/especialidad", especialidad);
+        const response = await axios.post("/especialidad", especialidad, {
+            // request config
+        });
         console.log("createEspecialidadResp", response);
     }
     catch(error){
@@ -12,9 +14,14 @@ export const CreateEspecialidad = async (especialidad) => {
     }
 }
 
-export const GetAllEspecialidad = async () => {
+export const GetAllEspecialidad = async (token) => {
     try{
-        const response = await axios.get("/especialidad");
+        const response = await axios.get("/especialidad", {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
         console.log("getAllEspecialidadResp", response);
         return response.data;
     }

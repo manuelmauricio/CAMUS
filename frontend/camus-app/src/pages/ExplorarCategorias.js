@@ -3,15 +3,20 @@ import { Container } from '@mui/material';
 import { Table, TableBody, TableCell, TableContainer, TableHead,
 TableRow, Paper, Typography, Box, Button, Grid  } from '@mui/material';
 import { GetAllEspecialidad } from '../api/CAMUSAPI';
+import { useAuth0 } from '../hooks/react-auth0-spa';
+
 export default function ExplorarCategorias() {
     const [especialidades, setEspecialidades] = useState([]);
+    const {getTokenSilently} = useAuth0();
 
     useEffect(() => {
         async function fetchData(){
-            const especialidadRes = await GetAllEspecialidad();
+            const token = await getTokenSilently();
+            const especialidadRes = await GetAllEspecialidad(token);
             setEspecialidades(especialidadRes);
         } 
-        fetchData();
+    
+    fetchData();
     },[]);
 
     return (

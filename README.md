@@ -7,7 +7,7 @@ Matricula 	Nombre
 
 Código fuente del backend de la aplicación CAMUS para la materia de Programación Web 2
 
-Carpetas:
+-Backend
 -src
  -controllers: controladores de los esquemas de la aplicación
  -models: archivo de conexión a la base de datos/ esquemas de las tablas en la base de datos
