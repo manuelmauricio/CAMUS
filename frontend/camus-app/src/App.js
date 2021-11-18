@@ -15,10 +15,13 @@ import FormularioAnalisis from './pages/FormularioAnalisis';
 import FormularioCita from './pages/FormularioCita';
 import FormularioEspecialidad from './pages/FormularioEspecialidad';
 import FormularioMensaje from './pages/FormularioMensaje';
+import FormularioConsultorio from './pages/FormularioConsultorio';
 import FormularioNotaMedica from './pages/FormularioNotaMedica';
 import FormularioPadecimiento from './pages/FormularioPadecimiento';
 import ExplorarCategorias from './pages/ExplorarCategorias';
 import ExplorarLaboratorios from './pages/ExplorarLaboratorios';
+import ExplorarConsultorios from './pages/ExplorarConsultorios';
+
 import TopBar from './components/TopBar';
 import { Fragment } from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -52,12 +55,14 @@ function App() {
             <Route exact path="/Laboratorio" component={Laboratorio} />
             <Route exact path="/FormularioLaboratorio" component={FormularioLaboratorio} />
             <Route exact path="/FormularioAnalisis" component={FormularioAnalisis} />
+            <PrivateRoute exact path="/FormularioConsultorio" component={FormularioConsultorio} />
             <Route exact path="/FormularioCita" component={FormularioCita} />
             <PrivateRoute exact path="/FormularioEspecialidad" component={FormularioEspecialidad} />
             <Route exact path="/FormularioMensaje" component={FormularioMensaje} />
             <Route exact path="/FormularioNotaMedica" component={FormularioNotaMedica} />
             <Route exact path="/FormularioPadecimiento" component={FormularioPadecimiento} />
             <PrivateRoute exact path="/ExplorarCategorias" component={ExplorarCategorias} />
+            <PrivateRoute exact path="/ExplorarConsultorios" component={ExplorarConsultorios} />
             <Route exact path="/ExplorarLaboratorios" component={ExplorarLaboratorios} />
             
           </Switch>

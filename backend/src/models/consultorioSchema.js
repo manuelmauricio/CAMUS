@@ -1,6 +1,12 @@
 const mongoose = require('mongoose')
 
 const ConsultorioSchema = new mongoose.Schema({
+    descripcion: {
+        type: String,
+        required: true,
+        minlength: 10,
+        maxlength: 200
+    },
     ubicacion: {
         type: String,
         required: true,

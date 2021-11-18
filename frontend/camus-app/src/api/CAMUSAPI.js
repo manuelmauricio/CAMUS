@@ -54,3 +54,37 @@ export const GetAllLaboratorios = async () => {
         return error;
     }
 }
+
+//COLECCIÓN CONSULTORIO
+export const CreateConsultorio = async (consultorio,token) => {
+    try{
+        const response = await axios.post("/consultorio", consultorio, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("createConsultorioResp", response);
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
+
+export const GetAllConsultorios = async (token) => {
+    try{
+        const response = await axios.get("/consultorio", {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("getAllConsultorioResp", response);
+        return response.data;
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
