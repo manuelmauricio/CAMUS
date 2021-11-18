@@ -14,6 +14,7 @@ exports.consultorio_create = async (req,res) => {
 };
 
 exports.consultorio_getall = async (req,res) =>{
+    console.log("resolving: /consultorio | consultorio_getall");
     const data = await Consultorio.find();
     res.send(data);
 };

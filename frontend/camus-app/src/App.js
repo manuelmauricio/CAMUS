@@ -49,7 +49,7 @@ function App() {
 
             <Route exact path="/Pacientes" component={Pacientes} />
 
-            <Route exact path="/RegistroDeUsuarios" component={RegistroDeUsuarios} />
+            <PrivateRoute exact path="/RegistroDeMedicos" component={RegistroDeUsuarios} />
             <Route exact path="/Consultorio" component={Consultorio} />
             <Route exact path="/ModificarPerfilMedico" component={ModificarPerfilMedico} />
             <Route exact path="/Laboratorio" component={Laboratorio} />

@@ -3,14 +3,12 @@ const mongoose = require('mongoose')
 const UsuarioSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: true,
         minlength: 4,
         maxlength: 20,
         unique: true
     },
     password: {
         type: String,
-        required: true,
         minlength: 4,
         maxlength: 20
     },
@@ -43,10 +41,9 @@ const UsuarioSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:'especialidad'
     },
-    consultorio: {
-        type: String,
-        minlength: 4,
-        maxlength: 80
+    fkconsultorio: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'consultorio'
     },
     descripcion: {
         type: String,

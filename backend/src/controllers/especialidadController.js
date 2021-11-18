@@ -14,6 +14,7 @@ exports.especialidad_create = async (req,res) => {
 };
 
 exports.especialidad_getall = async (req,res) =>{
+    console.log("resolving: /especialidad | especialidad_getall");
     const data = await Especialidad.find();
     res.send(data);
 };

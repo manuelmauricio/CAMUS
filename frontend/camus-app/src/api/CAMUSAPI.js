@@ -88,3 +88,20 @@ export const GetAllConsultorios = async (token) => {
         return error;
     }
 }
+
+//COLECCIÓN USUARIO (MEDICOS)
+export const CreateUsuario = async (usuario,token) => {
+    try{
+        const response = await axios.post("/usuario", usuario, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("createUsuariooResp", response);
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
