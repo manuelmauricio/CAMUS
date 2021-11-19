@@ -72,6 +72,23 @@ export const GetAllLaboratorios = async () => {
     }
 }
 
+export const GetLaboratorio = async (id,token) => {
+    try{
+        const response = await axios.get(`/laboratorio/${id}`, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("getLaboratorioResp", response);
+        return response.data;
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
+
 //COLECCIÓN CONSULTORIO
 export const CreateConsultorio = async (consultorio,token) => {
     try{
@@ -143,6 +160,23 @@ export const GetAllUsuarios = async (token) => {
 export const GetUsuario = async (id,token) => {
     try{
         const response = await axios.get(`/usuario/${id}`, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("getUsuarioResp", response);
+        return response.data;
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
+
+export const GetAllUsuariosCat = async (id,token) => {
+    try{
+        const response = await axios.get(`/usuario/cat/${id}`, {
             // request config
             headers:{
                 Authorization: `Bearer ${token}`

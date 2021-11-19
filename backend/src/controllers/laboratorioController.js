@@ -14,11 +14,13 @@ exports.laboratorio_create = async (req,res) => {
 };
 
 exports.laboratorio_getall = async (req,res) =>{
+    console.log("resolving: /laboratorio | especialidad_getall");
     const data = await Laboratorio.find();
     res.send(data);
 };
 
 exports.laboratorio_getbyid = async (req,res) =>{
+    console.log("resolving: /laboratorio | laboratorio_getbyid");
     const {id} = req.params;
     const data = await Laboratorio.findById(id);
     res.send(data);

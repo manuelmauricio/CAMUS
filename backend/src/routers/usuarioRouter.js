@@ -7,7 +7,8 @@ const checkJwt = require('../middleware/jwksRsa ');
  
 router.post('/usuario',checkJwt, usuario_controller.usuario_create);
 router.get('/usuario', checkJwt, usuario_controller.usuario_getall);
-router.get('/usuario/:id', usuario_controller.usuario_getbyid);
+router.get('/usuario/:id', checkJwt, usuario_controller.usuario_getbyid);
+router.get('/usuario/cat/:id', usuario_controller.usuario_getbyespecialidad);
 router.put('/usuario/:id', usuario_controller.usuario_update);
 router.delete('/usuario/:id', usuario_controller.usuario_delete);
 

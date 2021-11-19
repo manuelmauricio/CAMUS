@@ -7,6 +7,11 @@ const LaboratorioSchema = new mongoose.Schema({
         minlength: 10,
         maxlength: 200
     },
+    detalle: {
+        type: String,
+        minlength: 10,
+        maxlength: 200
+    },
     ubicacion: {
         type: String,
         required: true,

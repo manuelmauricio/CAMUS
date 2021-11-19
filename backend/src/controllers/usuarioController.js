@@ -26,6 +26,13 @@ exports.usuario_getbyid = async (req,res) =>{
     res.send(data);
  };
 
+ exports.usuario_getbyespecialidad = async (req,res) =>{
+    console.log("resolving: /usuario | usuario_getbyespecialidad");
+    const {id} = req.params;
+    const data = await Usuario.find({fkespecialidad:id  } ).populate("fkconsultorio").populate("fkespecialidad");
+    res.send(data);
+ };
+
  exports.usuario_update = async (req,res) =>{
     const {id} = req.params;
     const {body} = req;

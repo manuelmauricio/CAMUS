@@ -22,6 +22,7 @@ import ExplorarCategorias from './pages/ExplorarCategorias';
 import ExplorarLaboratorios from './pages/ExplorarLaboratorios';
 import ExplorarConsultorios from './pages/ExplorarConsultorios';
 import ExplorarMedicos from './pages/ExplorarMedicos';
+import ExplorarMedicosEspecialidad from './pages/ExplorarMedicosEspecialidad';
 
 import TopBar from './components/TopBar';
 import { Fragment } from 'react';
@@ -53,7 +54,7 @@ function App() {
             <PrivateRoute exact path="/RegistroDeMedicos" component={RegistroDeUsuarios} />
             <PrivateRoute exact path="/Consultorio/:id" component={Consultorio} />
             <PrivateRoute exact path="/ModificarPerfilMedico" component={ModificarPerfilMedico} />
-            <PrivateRoute exact path="/Laboratorio" component={Laboratorio} />
+            <PrivateRoute exact path="/Laboratorio/:id" component={Laboratorio} />
             <PrivateRoute exact path="/FormularioLaboratorio" component={FormularioLaboratorio} />
             <PrivateRoute exact path="/FormularioAnalisis" component={FormularioAnalisis} />
             <PrivateRoute exact path="/FormularioConsultorio" component={FormularioConsultorio} />
@@ -62,6 +63,7 @@ function App() {
             <PrivateRoute exact path="/FormularioMensaje" component={FormularioMensaje} />
             <PrivateRoute exact path="/FormularioNotaMedica" component={FormularioNotaMedica} />
             <PrivateRoute exact path="/FormularioPadecimiento" component={FormularioPadecimiento} />
+            <PrivateRoute exact path="/ExplorarMedicosEspecialidad/:id" component={ExplorarMedicosEspecialidad} />
             <PrivateRoute exact path="/ExplorarCategorias" component={ExplorarCategorias} />
             <PrivateRoute exact path="/ExplorarConsultorios" component={ExplorarConsultorios} />
             <PrivateRoute exact path="/ExplorarLaboratorios" component={ExplorarLaboratorios} />

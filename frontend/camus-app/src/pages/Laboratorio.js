@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import { Container } from '@mui/material';
 import { Typography } from '@mui/material';
 import { Card } from '@mui/material';
@@ -11,7 +11,9 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { TextField } from '@mui/material';
 import { FormControl } from '@mui/material';
-
+import {useParams} from "react-router-dom";
+import { GetLaboratorio } from '../api/CAMUSAPI';
+import { useAuth0 } from '../hooks/react-auth0-spa';
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: "#FFFFFF",
@@ -22,9 +24,29 @@ const ColorButton = styled(Button)(({ theme }) => ({
   }));
 
 export default function Laboratorio() {
+    const { id } = useParams();
+    const {getTokenSilently} = useAuth0();
+    const [laboratorio, setLaboratorio] = useState({
+        descripcion: "",
+        detalle: "",
+        ubicacion: "",
+        hora_apertura: "",
+        hora_cierre: "",
+        precio_consulta: ""
+    });
+
+    useEffect(() => {
+        async function fetchData(){
+            const token = await getTokenSilently();
+            const laboratorioRes = await GetLaboratorio(id,token);
+            setLaboratorio(laboratorioRes);
+        } 
+        fetchData();
+    },[]);
+
     return (
         <Container>
-            <Card sx={{ display: 'flex', mt:3, backgroundColor:"#ebf6f4" }}>
+            <Card sx={{ display: 'flex', mt:3 }}>
                     <CardMedia
                     component="img"
                     sx={{ width: 400, margin:"15px", height:400}}
@@ -35,22 +57,22 @@ export default function Laboratorio() {
                     <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
                         <CardContent sx={{ flex: '1 0 auto' }}>
                         <Typography component="div" variant="h2" sx={{color:"#4d9296"}}>
-                        Laboratorio_A
+                        {laboratorio.descripcion}
                         </Typography>
                         <Typography variant="subtitle1" component="div" sx={{fontWeight:800, fontSize:30}}>
-                            Laboratorio
+                        {laboratorio.detalle}
+                        </Typography>
+                        <br/>
+                        <Typography component="div" sx={{mt:2}}>
+                        {laboratorio.ubicacion}
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography component="div" sx={{mt:2}}>
+                            Horario: {laboratorio.hora_apertura} - {laboratorio.hora_cierre}
                         </Typography>
                         <Typography component="div" sx={{mt:2}}>
-                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
-                        </Typography>
-                        <Typography component="div" sx={{mt:2}}>
-                            Horario: 9:00am - 11:00pm
-                        </Typography>
-                        <Typography component="div" sx={{mt:2}}>
-                           Dirrección: Calle 7, número 132, agrícola Pantitlán, Ciudad De México Delegación Izatacalco 08100
-                        </Typography>
-                        <Typography component="div" sx={{mt:2}}>
-                            Precio Exámenes: $500
+                            Precio Exámenes: ${laboratorio.precio_consulta}
                         </Typography>
                         </CardContent>
                     </Box>

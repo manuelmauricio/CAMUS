@@ -22,6 +22,7 @@ export default function FormularioLaboratorio() {
 
   const [laboratorio, setLaboratorio] = useState({
     descripcion:"",
+    detalle:"",
     ubicacion:"",
     hora_apertura:"",
     hora_cierre:"",
@@ -52,8 +53,13 @@ const handleSubmit = async (e) => {
             <form onSubmit={handleSubmit}>
 
             <FormControl fullWidth sx={{m:1, mt:2}}>
-            <TextField sx={{backgroundColor:"#FFFFFF"}} name="descripcion" label="Descripción del laboratorio:" variant="outlined" required
+            <TextField sx={{backgroundColor:"#FFFFFF"}} name="descripcion" label="Nombre del laboratorio:" variant="outlined" required
             onChange={handleChange} value={laboratorio.descripcion}></TextField>
+            </FormControl>
+
+            <FormControl fullWidth sx={{m:1, mt:2}}>
+            <TextField sx={{backgroundColor:"#FFFFFF"}} name="detalle" label="Detalles sobre el laboratorio:" variant="outlined" required
+            onChange={handleChange} value={laboratorio.detalle}></TextField>
             </FormControl>
 
             <FormControl fullWidth sx={{m:1, mt:2}}>

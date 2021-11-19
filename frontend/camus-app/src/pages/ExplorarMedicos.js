@@ -43,14 +43,18 @@ export default function ExplorarMedicos() {
             <Grid container>
                 <Grid xs>
                 <Typography component="div" variant="h5" sx={{color:"#4d9296", mt:2}}>
-                    Categorías:
+                    Especialidades:
             </Typography>
                     {especialidades.map((item, index) =>(
-                    <Typography key={item._id}>- {item.nombre}</Typography>
+                    <div>
+                   <Link to={`/ExplorarMedicosEspecialidad/${item._id}`} color="#4d9296">
+                   {item.nombre}
+                    </Link>
+                    </div>
                     ))}
                     <br/>
                     <Link to="/ExplorarCategorias" color="#4d9296">
-                       Administrar categorías.......
+                       Administrar especialidades...
                     </Link>
                 </Grid>
             </Grid>
