@@ -91,16 +91,16 @@ export default function NavBar(props) {
                         url: "/Conocenos",
                     },
                     {
-                      /* 
-                        text: "Servicios",
-                        url: "/Servicios",
-                      */
+                      
+                        text: "Consultorios",
+                        url: "/ExplorarConsultorios",
+                      
                     },
                     {
-                      /*
-                        text: "Directorio",
-                        url: "/Directorio",
-                      */  
+                      
+                        text: "Laboratorios",
+                        url: "/ExplorarLaboratorios",
+                      
                     },
                     {
                       /*

@@ -66,9 +66,8 @@ const handleSubmit = async (e) => {
 
             
            </form>
-
-           <Link to="/" color="#4d9296">
-              Volver a la lista de categorías
+           <Link to="/ExplorarCategorias" sx={{m:1}} color="#4d9296">
+              Volver a la lista de especialidades
             </Link>
 
         </Container>

@@ -6,7 +6,7 @@ import { GetAllEspecialidad } from '../api/CAMUSAPI';
 import { useAuth0 } from '../hooks/react-auth0-spa';
 import { styled, alpha } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-
+ 
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: "#FFFFFF",

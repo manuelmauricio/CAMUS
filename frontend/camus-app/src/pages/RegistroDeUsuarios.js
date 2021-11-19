@@ -66,7 +66,7 @@ export default function RegistroDeUsuarios() {
     e.preventDefault();
     console.log("submit", usuario);
     await CreateUsuario(usuario,token);
-     alert("Se ha agregado nueva médico");
+     alert("Se ha agregado nuevo médico");
   };
 
 

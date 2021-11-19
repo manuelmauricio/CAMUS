@@ -8,7 +8,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '../hooks/react-auth0-spa';
+import { styled, alpha } from '@mui/material/styles';
 
+const ColorButton = styled(Button)(({ theme }) => ({
+    color: "#FFFFFF",
+    backgroundColor: "#4d9296",
+    '&:hover': {
+      backgroundColor: "#23585b",
+    },
+}));
 
 
 export default function ExplorarConsultorios() {
@@ -61,6 +69,9 @@ export default function ExplorarConsultorios() {
                     </Card>
                     </div>
                     ))}
+
+<ColorButton  sx={{m:1, mb:4}} component={Link} to="/FormularioConsultorio" variant="contained">Agregar Consultorio</ColorButton>
+
 
         </Container>
     )

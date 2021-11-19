@@ -7,7 +7,15 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Link } from 'react-router-dom';
+import { styled, alpha } from '@mui/material/styles';
 
+const ColorButton = styled(Button)(({ theme }) => ({
+    color: "#FFFFFF",
+    backgroundColor: "#4d9296",
+    '&:hover': {
+      backgroundColor: "#23585b",
+    },
+}));
 
 export default function ExplorarLaboratorios() {
     const [laboratorios, setLaboratorios] = useState([]);
@@ -59,7 +67,9 @@ export default function ExplorarLaboratorios() {
                     </Card>
                     </div>
                     ))}
+<ColorButton  sx={{m:1, mb:4}} component={Link} to="/FormularioLaboratorio" variant="contained">Agregar Laboratorio</ColorButton>
 
         </Container>
+        
     )
 }

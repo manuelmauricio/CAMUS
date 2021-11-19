@@ -6,6 +6,8 @@ import { FormControl } from '@mui/material';
 import Button from '@mui/material/Button';
 import { styled, alpha } from '@mui/material/styles';
 import { CreateLaboratorio } from '../api/CAMUSAPI';
+import { Link } from 'react-router-dom';
+
 
 
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -38,7 +40,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   console.log("submit", laboratorio);
   await CreateLaboratorio(laboratorio);
-   alert("Se ha agregado nueva laboratorio");
+   alert("Se ha agregado nuevo laboratorio");
 };
 
     return (
@@ -84,6 +86,13 @@ const handleSubmit = async (e) => {
 
             
            </form>
+
+           <Link to="/ExplorarLaboratorios" sx={{m:1}} color="#4d9296">
+              Volver a la lista de laboratorios
+            </Link>
+            <br/>
+            <br/>
+            <br/>
         </Container>
     )
 }

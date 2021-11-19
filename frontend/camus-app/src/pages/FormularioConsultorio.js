@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import { styled, alpha } from '@mui/material/styles';
 import { CreateConsultorio } from '../api/CAMUSAPI';
 import { useAuth0 } from '../hooks/react-auth0-spa';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -43,7 +45,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   console.log("submit", consultorio);
   await CreateConsultorio(consultorio, token);
-   alert("Se ha agregado nueva consultorio");
+   alert("Se ha agregado nuevo consultorio");
 };
 
     return (
@@ -87,8 +89,17 @@ const handleSubmit = async (e) => {
             <ColorButton type="submit" variant="contained">Guardar Cambios del consultorio</ColorButton>
             </FormControl>
 
+
             
            </form>
+     
+     
+           <Link to="/ExplorarConsultorios" sx={{m:2, mb:5}} color="#4d9296">
+              Volver a la lista de consultorios
+            </Link>
+            <br/>
+            <br/>
+
         </Container>
     )
 }
