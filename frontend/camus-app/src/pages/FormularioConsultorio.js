@@ -57,7 +57,7 @@ const handleSubmit = async (e) => {
             <form onSubmit={handleSubmit} autocomplete="off">
 
             <FormControl fullWidth sx={{m:1, mt:2}}>
-            <TextField sx={{backgroundColor:"#FFFFFF"}} name="descripcion" label="Descripción del consultorio:" variant="outlined" required
+            <TextField sx={{backgroundColor:"#FFFFFF"}} name="descripcion" label="Nombre del consultorio:" variant="outlined" required
             onChange={handleChange} value={consultorio.descripcion}></TextField>
             </FormControl>
 
