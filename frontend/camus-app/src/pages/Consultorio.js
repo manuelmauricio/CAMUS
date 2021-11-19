@@ -13,6 +13,10 @@ import { TextField } from '@mui/material';
 import { FormControl } from '@mui/material';
 import {useParams} from "react-router-dom";
 import { GetUsuario } from '../api/CAMUSAPI';
+import { CreateOpinion } from '../api/CAMUSAPI';
+import { GetAllOpinionesDoc } from '../api/CAMUSAPI';
+
+
 import { Link } from 'react-router-dom';
 
 import { useAuth0 } from '../hooks/react-auth0-spa';
@@ -38,11 +42,37 @@ export default function Consultorio() {
         fkconsultorio: ""
     });
 
+    const [opinion, setOpinion] = useState({
+        idfk_doctor: id,
+        texto: ""
+    });
+
+    const [opinionesdoc, setOpinionesdoc] = useState([]);
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setOpinion({
+            ...opinion,
+            [name]:value
+        });
+      };
+
+    const handleSubmit = async (e) => {
+        const token = await getTokenSilently();
+        e.preventDefault();
+        console.log("submit", opinion);
+        await CreateOpinion(opinion, token);
+         alert("Se publico la nueva opinion");
+         window.location.reload();
+      };
+
     useEffect(() => {
         async function fetchData(){
             const token = await getTokenSilently();
             const usuarioRes = await GetUsuario(id,token);
             setUsuario(usuarioRes);
+            const opinionesdocRes = await GetAllOpinionesDoc(id,token);
+            setOpinionesdoc(opinionesdocRes);
         } 
         fetchData();
     },[]);
@@ -111,6 +141,8 @@ export default function Consultorio() {
                             Opiniones:
             </Typography>
 
+            {opinionesdoc.map((item, index) =>(
+            <div key={item._id}>
             <Card sx={{ display: 'flex', mt:3, backgroundColor:"#FFFFFF" }}>
                 <CardMedia
                     component="img"
@@ -125,41 +157,23 @@ export default function Consultorio() {
                             Usuario X
                         </Typography>
                         <Typography variant="subtitle1" component="div" sx={{fontSize:20}}>
-                            Lorem ipsum dolor sit .amet, consectetur adipiscing elit. 
+                        {item.texto} 
                         </Typography>
                         <Typography component="div">
-                            Publicado el 20/10/2021
+                            Publicado el {item.fecha_publicacion} 
                         </Typography>
                         </CardContent>
                     </Box>
             </Card>
+            </div>
+            ))}
 
-            <Card sx={{ display: 'flex', mt:3, backgroundColor:"#FFFFFF" }}>
-                <CardMedia
-                    component="img"
-                    sx={{ width: 100, margin:"15px", height:100}}
-                    image="/user.jpg"
-                    variant="outlined"
-                    
-                />
-                    <Box sx={{ display: 'flex', flexDirection: 'column' }} >
-                        <CardContent sx={{ flex: '1 0 auto' }}>
-                        <Typography component="div" variant="h6" sx={{color:"#4d9296", fontSize:20}}>
-                            Usuario Y
-                        </Typography>
-                        <Typography variant="subtitle1" component="div" sx={{fontSize:20}}>
-                            Lorem ipsum dolor sit .amet, consectetur adipiscing elit. 
-                        </Typography>
-                        <Typography component="div">
-                            Publicado el 20/10/2021
-                        </Typography>
-                        </CardContent>
-                    </Box>
-            </Card>
 
-        <form>
+
+        <form onSubmit={handleSubmit}>
             <FormControl fullWidth sx={{m:1, mt:5}}>
-            <TextField sx={{backgroundColor:"#FFFFFF"}} name="opinion" label="Escribe una opinión..." variant="outlined" required></TextField>
+            <TextField sx={{backgroundColor:"#FFFFFF"}} name="texto" label="Escribe una opinión..." variant="outlined" required
+            onChange={handleChange} value={opinion.texto}></TextField>
             </FormControl>
 
             <FormControl sx={{m:1, mb:5}}>

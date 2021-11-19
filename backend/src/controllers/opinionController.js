@@ -24,6 +24,12 @@ exports.opinion_getbyid = async (req,res) =>{
     res.send(data);
  };
 
+ exports.opinion_getbydoctor = async (req,res) =>{
+    const {id} = req.params;
+    const data = await Opinion.find({idfk_doctor:id  });
+    res.send(data);
+ };
+
  exports.opinion_update = async (req,res) =>{
     const {id} = req.params;
     const {body} = req;

@@ -8,15 +8,18 @@ const OpinioncionSchema = new mongoose.Schema({
     },
     calificacion: {
         type: Number,
-        required: true,
         default: 1
     },
     texto: {
         type: String,
         required: true,
-        minlength: 10,
+        minlength: 5,
         maxlength: 400
-    }  
+    },
+    fecha_publicacion: {
+        type: Date,
+        default: Date.now
+    },
 })
 
 const Opinion = mongoose.model('opinion', OpinioncionSchema);

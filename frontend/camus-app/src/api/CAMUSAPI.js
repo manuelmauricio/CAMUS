@@ -224,3 +224,36 @@ export const DeleteUsuario = async (id,token) => {
     }
 }
 
+//COLECCIÓN OPINIONES (OPINIONES)
+export const CreateOpinion = async (opinion,token) => {
+    try{
+        const response = await axios.post("/opinion", opinion, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("createOpinionResp", response);
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
+
+export const GetAllOpinionesDoc = async (id,token) => {
+    try{
+        const response = await axios.get(`/opinion/doctor/${id}`, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("getOpinionResp", response);
+        return response.data;
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
