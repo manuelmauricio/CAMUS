@@ -191,3 +191,36 @@ export const GetAllUsuariosCat = async (id,token) => {
     }
 }
 
+export const UpdateUsuario = async (id,usuario,token) => {
+    try{
+        const response = await axios.put(`/usuario/${id}`, usuario, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("updateUsuariooResp", response);
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
+
+export const DeleteUsuario = async (id,token) => {
+    try{
+        const response = await axios.delete(`/usuario/${id}`, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("getDeleteResp", response);
+        return response.data;
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
+

@@ -13,6 +13,7 @@ import { TextField } from '@mui/material';
 import { FormControl } from '@mui/material';
 import {useParams} from "react-router-dom";
 import { GetUsuario } from '../api/CAMUSAPI';
+import { Link } from 'react-router-dom';
 
 import { useAuth0 } from '../hooks/react-auth0-spa';
 
@@ -81,7 +82,9 @@ export default function Consultorio() {
                         <Typography component="div" sx={{mt:2}}>
                             Contacto: {usuario.email}
                         </Typography>
-                        <ColorButton  type="submit" variant="contained" sx={{mt:2}}>Agendar Cita</ColorButton>
+                        
+                        <ColorButton  component={Link} to={`/EditarMedicos/${id}`} variant="contained" sx={{mt:2}}>Editar...</ColorButton>
+ 
                         </CardContent>
                     </Box>
             </Card>
