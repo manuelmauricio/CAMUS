@@ -20,6 +20,7 @@ import { CreateUsuario } from '../api/CAMUSAPI';
 
 
 
+
 const ColorButton = styled(Button)(({ theme }) => ({
     color: "#FFFFFF",
     backgroundColor: "#4d9296",
@@ -61,9 +62,10 @@ export default function RegistroDeUsuarios() {
   };
   
   const handleSubmit = async (e) => {
+    const token = await getTokenSilently();
     e.preventDefault();
     console.log("submit", usuario);
-    await CreateUsuario(usuario);
+    await CreateUsuario(usuario,token);
      alert("Se ha agregado nueva médico");
   };
 
@@ -145,8 +147,8 @@ export default function RegistroDeUsuarios() {
 
           <Box display="flex" justifyContent="center" alignItems="center">
             <FormControl sx={{m:1}} >
-            <Link to="/login" color="#4d9296">
-              Iniciar Sesión
+            <Link to="/" color="#4d9296">
+              Volver al directorio
             </Link>
             </FormControl>
             </Box>

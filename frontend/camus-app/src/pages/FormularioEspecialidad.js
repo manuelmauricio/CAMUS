@@ -6,6 +6,8 @@ import { FormControl } from '@mui/material';
 import Button from '@mui/material/Button';
 import { styled, alpha } from '@mui/material/styles';
 import { CreateEspecialidad } from '../api/CAMUSAPI';
+import { Link } from 'react-router-dom';
+
 
 
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -64,6 +66,11 @@ const handleSubmit = async (e) => {
 
             
            </form>
+
+           <Link to="/" color="#4d9296">
+              Volver a la lista de categorías
+            </Link>
+
         </Container>
     )
 }

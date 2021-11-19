@@ -62,7 +62,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
   }));
 
 export default function NavBar(props) {
-
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ background: '#4d9296' }}>
@@ -71,7 +71,7 @@ export default function NavBar(props) {
             <Grid item xs={4}>
             <a href="/">
               <img
-              src='LogoCamus.png'
+              src='/LogoCamus.png'
               alt="CAMUS"
               loading="Camus"
               />
@@ -138,7 +138,7 @@ export default function NavBar(props) {
         </Grid>
         </Toolbar>
       </AppBar>
-      <img src='health_wallpaper.jpg' alt="CAMUS" loading="Camus" width="100%" height="200px"/>
+      <img src='/health_wallpaper.jpg' alt="CAMUS" loading="Camus" width="100%" height="200px"/>
 
       <Box component="main">
       

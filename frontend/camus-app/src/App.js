@@ -21,6 +21,7 @@ import FormularioPadecimiento from './pages/FormularioPadecimiento';
 import ExplorarCategorias from './pages/ExplorarCategorias';
 import ExplorarLaboratorios from './pages/ExplorarLaboratorios';
 import ExplorarConsultorios from './pages/ExplorarConsultorios';
+import ExplorarMedicos from './pages/ExplorarMedicos';
 
 import TopBar from './components/TopBar';
 import { Fragment } from 'react';
@@ -40,30 +41,30 @@ function App() {
       <Router history={history}>
         <NavBar>
           <Switch>
-            <PrivateRoute exact path="/" component={Index} />
-            <Route exact path="/Conocenos" component={Conocenos} />
+            <PrivateRoute exact path="/" component={ExplorarMedicos} />
+            <PrivateRoute exact path="/Conocenos" component={Conocenos} />
             <Route exact path="/login" component={Login} exact/>
             <Route exact path="/logout" component={Logout} exact />
-            <Route exact path="/Servicios" component={Servicios} />
-            <Route exact path="/Directorio" component={Directorios} />
+            <PrivateRoute exact path="/Servicios" component={Servicios} />
+            <PrivateRoute exact path="/Directorio" component={Directorios} />
 
-            <Route exact path="/Pacientes" component={Pacientes} />
+            <PrivateRoute exact path="/Pacientes" component={Pacientes} />
 
             <PrivateRoute exact path="/RegistroDeMedicos" component={RegistroDeUsuarios} />
-            <Route exact path="/Consultorio" component={Consultorio} />
-            <Route exact path="/ModificarPerfilMedico" component={ModificarPerfilMedico} />
-            <Route exact path="/Laboratorio" component={Laboratorio} />
-            <Route exact path="/FormularioLaboratorio" component={FormularioLaboratorio} />
-            <Route exact path="/FormularioAnalisis" component={FormularioAnalisis} />
+            <PrivateRoute exact path="/Consultorio/:id" component={Consultorio} />
+            <PrivateRoute exact path="/ModificarPerfilMedico" component={ModificarPerfilMedico} />
+            <PrivateRoute exact path="/Laboratorio" component={Laboratorio} />
+            <PrivateRoute exact path="/FormularioLaboratorio" component={FormularioLaboratorio} />
+            <PrivateRoute exact path="/FormularioAnalisis" component={FormularioAnalisis} />
             <PrivateRoute exact path="/FormularioConsultorio" component={FormularioConsultorio} />
-            <Route exact path="/FormularioCita" component={FormularioCita} />
+            <PrivateRoute exact path="/FormularioCita" component={FormularioCita} />
             <PrivateRoute exact path="/FormularioEspecialidad" component={FormularioEspecialidad} />
-            <Route exact path="/FormularioMensaje" component={FormularioMensaje} />
-            <Route exact path="/FormularioNotaMedica" component={FormularioNotaMedica} />
-            <Route exact path="/FormularioPadecimiento" component={FormularioPadecimiento} />
+            <PrivateRoute exact path="/FormularioMensaje" component={FormularioMensaje} />
+            <PrivateRoute exact path="/FormularioNotaMedica" component={FormularioNotaMedica} />
+            <PrivateRoute exact path="/FormularioPadecimiento" component={FormularioPadecimiento} />
             <PrivateRoute exact path="/ExplorarCategorias" component={ExplorarCategorias} />
             <PrivateRoute exact path="/ExplorarConsultorios" component={ExplorarConsultorios} />
-            <Route exact path="/ExplorarLaboratorios" component={ExplorarLaboratorios} />
+            <PrivateRoute exact path="/ExplorarLaboratorios" component={ExplorarLaboratorios} />
             
           </Switch>
         </NavBar>

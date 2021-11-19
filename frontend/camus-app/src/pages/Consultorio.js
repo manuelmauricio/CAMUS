@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import { Container } from '@mui/material';
 import { Typography } from '@mui/material';
 import { Card } from '@mui/material';
@@ -11,6 +11,12 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { TextField } from '@mui/material';
 import { FormControl } from '@mui/material';
+import {useParams} from "react-router-dom";
+import { GetUsuario } from '../api/CAMUSAPI';
+
+import { useAuth0 } from '../hooks/react-auth0-spa';
+
+
 
 
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -22,35 +28,58 @@ const ColorButton = styled(Button)(({ theme }) => ({
   }));
 
 export default function Consultorio() {
-    return (
+    const { id } = useParams();
+    const {getTokenSilently} = useAuth0();
+    const [usuario, setUsuario] = useState({
+        nombre: "",
+        email: "",
+        fkespecialidad: "",
+        fkconsultorio: ""
+    });
+
+    useEffect(() => {
+        async function fetchData(){
+            const token = await getTokenSilently();
+            const usuarioRes = await GetUsuario(id,token);
+            setUsuario(usuarioRes);
+        } 
+        fetchData();
+    },[]);
+
+    
+        return (
         <Container>
+
             <Card sx={{ display: 'flex', mt:3, backgroundColor:"#ebf6f4" }}>
                     <CardMedia
                     component="img"
                     sx={{ width: 400, margin:"15px", height:400}}
-                    image="/doctor_A.jpg"
+                    image="/avatar_placeholder.jpg"
                     variant="outlined"
                     
                 />
                     <Box sx={{ display: 'flex', flexDirection: 'column', marginTop:"25px" }} >
                         <CardContent sx={{ flex: '1 0 auto' }}>
                         <Typography component="div" variant="h2" sx={{color:"#4d9296"}}>
-                            Pricila Flores García
+                            {usuario.nombre}
                         </Typography>
                         <Typography variant="subtitle1" component="div" sx={{fontWeight:800, fontSize:30}}>
-                            Medico Familiar
+                        {usuario.fkespecialidad.nombre}
                         </Typography>
                         <Typography component="div" sx={{mt:2}}>
-                        Lorem ipsum dolor sit .amet, consectetur adipiscing elit. Nunc quis laoreet ex, ut vehicula ex.
+                        {usuario.fkconsultorio.descripcion}
                         </Typography>
                         <Typography component="div" sx={{mt:2}}>
-                            Horario: 9:00am - 11:00pm
+                            Horario: {usuario.fkconsultorio.hora_apertura} - {usuario.fkconsultorio.hora_cierre}
                         </Typography>
                         <Typography component="div" sx={{mt:2}}>
-                           Dirrección: Calle 7, número 132, agrícola Pantitlán, Ciudad De México Delegación Izatacalco 08100
+                        {usuario.fkconsultorio.ubicacion}
                         </Typography>
                         <Typography component="div" sx={{mt:2}}>
-                            Precio Consulta: $500
+                            Precio Consulta: ${usuario.fkconsultorio.precio_consulta}
+                        </Typography>
+                        <Typography component="div" sx={{mt:2}}>
+                            Contacto: {usuario.email}
                         </Typography>
                         <ColorButton  type="submit" variant="contained" sx={{mt:2}}>Agendar Cita</ColorButton>
                         </CardContent>
@@ -141,15 +170,15 @@ export default function Consultorio() {
 
 const itemData = [
     {
-      img: 'consultorio.jpg',
+      img: '/consultorio.jpg',
       title: 'Img1',
     },
     {
-      img: 'consultorio.jpg',
+      img: '/consultorio.jpg',
       title: 'Img2',
     },
     {
-      img: 'consultorio.jpg',
+      img: '/consultorio.jpg',
       title: 'Img3',
     },
   ];

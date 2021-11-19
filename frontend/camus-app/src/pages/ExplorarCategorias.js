@@ -4,6 +4,17 @@ import { Table, TableBody, TableCell, TableContainer, TableHead,
 TableRow, Paper, Typography, Box, Button, Grid  } from '@mui/material';
 import { GetAllEspecialidad } from '../api/CAMUSAPI';
 import { useAuth0 } from '../hooks/react-auth0-spa';
+import { styled, alpha } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
+
+
+const ColorButton = styled(Button)(({ theme }) => ({
+    color: "#FFFFFF",
+    backgroundColor: "#4d9296",
+    '&:hover': {
+      backgroundColor: "#23585b",
+    },
+}));
 
 export default function ExplorarCategorias() {
     const [especialidades, setEspecialidades] = useState([]);
@@ -53,6 +64,9 @@ export default function ExplorarCategorias() {
             </Box>
         </Fragment>
         </div>
+
+        <ColorButton  sx={{m:1, mb:4}} component={Link} to="/FormularioEspecialidad" variant="contained">Agregar Especialidad</ColorButton>
+
         </Container>
     )
 }

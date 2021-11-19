@@ -14,13 +14,15 @@ exports.usuario_create = async (req,res) => {
 };
 
 exports.usuario_getall = async (req,res) =>{
-    const data = await Usuario.find();
+    console.log("resolving: /usuario | usuario_getall");
+    const data = await Usuario.find().populate("fkconsultorio").populate("fkespecialidad");
     res.send(data);
 };
 
 exports.usuario_getbyid = async (req,res) =>{
+    console.log("resolving: /usuario | usuario_getbyid");
     const {id} = req.params;
-    const data = await Usuario.findById(id);
+    const data = await Usuario.findById(id).populate("fkconsultorio").populate("fkespecialidad");
     res.send(data);
  };
 
