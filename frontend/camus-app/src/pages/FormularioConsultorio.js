@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
                     Datos del Consultorio
             </Typography>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} autocomplete="off">
 
             <FormControl fullWidth sx={{m:1, mt:2}}>
             <TextField sx={{backgroundColor:"#FFFFFF"}} name="descripcion" label="Descripción del consultorio:" variant="outlined" required

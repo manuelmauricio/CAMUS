@@ -48,7 +48,7 @@ const handleSubmit = async (e) => {
                    Agregar Especialidad:
             </Typography>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} autocomplete="off">
 
             <FormControl fullWidth sx={{m:1}}>
             <TextField sx={{backgroundColor:"#FFFFFF"}} name="nombre" label="Nombre de la nueva especialidad:" variant="outlined" required

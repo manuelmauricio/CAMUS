@@ -48,7 +48,7 @@ export default function ExplorarMedicos() {
                     {especialidades.map((item, index) =>(
                     <div>
                    <Link to={`/ExplorarMedicosEspecialidad/${item._id}`} color="#4d9296">
-                   {item.nombre}
+                   -{item.nombre}
                     </Link>
                     </div>
                     ))}

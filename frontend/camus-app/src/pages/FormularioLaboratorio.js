@@ -50,7 +50,7 @@ const handleSubmit = async (e) => {
                     Datos del Laboratorio
             </Typography>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} autocomplete="off">
 
             <FormControl fullWidth sx={{m:1, mt:2}}>
             <TextField sx={{backgroundColor:"#FFFFFF"}} name="descripcion" label="Nombre del laboratorio:" variant="outlined" required

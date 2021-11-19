@@ -138,7 +138,7 @@ export default function Consultorio() {
     </ImageList>
 
             <Typography component="div" variant="h4" sx={{color:"#4d9296", mt:2}}>
-                            Opiniones:
+                            Comentarios:
             </Typography>
 
             {opinionesdoc.map((item, index) =>(
@@ -170,7 +170,7 @@ export default function Consultorio() {
 
 
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autocomplete="off">
             <FormControl fullWidth sx={{m:1, mt:5}}>
             <TextField sx={{backgroundColor:"#FFFFFF"}} name="texto" label="Escribe una opinión..." variant="outlined" required
             onChange={handleChange} value={opinion.texto}></TextField>

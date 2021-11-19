@@ -80,7 +80,7 @@ export default function RegistroDeUsuarios() {
           </Box>
   
           <Container>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} autocomplete="off">
 
               <FormControl fullWidth sx={{m:1}}>
               <TextField name="nombre" label="Nombre Completo" variant="outlined" required
