@@ -34,9 +34,12 @@ export default function RegistroDeUsuarios() {
   const [especialidades, setEspecialidades] = useState([]);
 
   const [usuario, setUsuario] = useState({
+    username:Date.now(),
+    password:Date.now(),
     nombre:"",
     fecha_nacimiento:"",
     email:"",
+    imagenchar:"",
     fkespecialidad:"",
     fkconsultorio:""
   });
@@ -52,6 +55,11 @@ export default function RegistroDeUsuarios() {
     } 
     fetchData();
    },[]);
+
+   const SingleFileChange = (e) => {
+    var fileName = e.target.files[0].name;
+    usuario.imagenchar = fileName;
+  }
 
    const handleChange = (e) => {
     const {name, value} = e.target;
@@ -120,7 +128,7 @@ export default function RegistroDeUsuarios() {
               </FormControl>
 
               <FormControl fullWidth sx={{m:1}}>
-              <TextField type="date" name="fecha_nacimiento" label="Fecha de nacimiento" variant="outlined" required
+              <TextField type="date" name="fecha_nacimiento" label="________________Fecha de nacimiento" variant="outlined" required
               onChange={handleChange} value={usuario.fecha_nacimiento} ></TextField>
               </FormControl>
 
@@ -130,8 +138,9 @@ export default function RegistroDeUsuarios() {
               </FormControl>
 
               <FormControl fullWidth sx={{m:1}}>
-              <TextField type="file" name="imagenchar" label="Foto de perfil:" variant="outlined" ></TextField>
-              </FormControl>
+            <input accept="image/*" sx={{backgroundColor:"#FFFFFF"}} id="imagen" type="file" name="imagen_consultorio" label="Agregar imagen:" variant="outlined" 
+            onChange={(e) => SingleFileChange(e)}></input>
+            </FormControl>
   
               <FormControl fullWidth sx={{mt:3}}>
                      

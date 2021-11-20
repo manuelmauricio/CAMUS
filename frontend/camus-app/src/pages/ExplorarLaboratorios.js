@@ -28,6 +28,13 @@ export default function ExplorarLaboratorios() {
         fetchData();
     },[]);
 
+    function myimage(e){
+        if(e==""){
+            return "laboratorio_placeholder.jpg";
+        } else return e;
+
+    }
+
     return (
         <Container>
 
@@ -42,7 +49,7 @@ export default function ExplorarLaboratorios() {
                     <CardMedia
                     component="img"
                     sx={{ width: 250, margin:"15px", height:250}}
-                    image="/laboratorio_placeholder.jpg"
+                    image={`/${myimage(item.imagen_laboratorio)}`}
                     variant="outlined"
                     />
 

@@ -24,6 +24,13 @@ export default function ExplorarMedicos() {
     const [usuarios, setUsuarios] = useState([]);
     const [especialidades, setEspecialidades] = useState([]);
     const {getTokenSilently} = useAuth0();
+    function myimage(e){
+        console.log(e);
+        if(e==""){
+            return "avatar_placeholder.jpg";
+        } else return e;
+
+    }
 
 
     useEffect(() => {
@@ -70,7 +77,7 @@ export default function ExplorarMedicos() {
                     <CardMedia
                     component="img"
                     sx={{ width: 250, margin:"15px", height:250}}
-                    image="/avatar_placeholder.jpg"
+                    image={`/${myimage(item.imagenchar)}`}
                     variant="outlined"
                     />
 

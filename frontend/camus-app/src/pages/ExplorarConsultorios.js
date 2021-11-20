@@ -32,6 +32,12 @@ export default function ExplorarConsultorios() {
         } 
         fetchData();
     },[]);
+    function myimage(e){
+        if(e==""){
+            return "clinica_placeholder.jpg";
+        } else return e;
+
+    }
 
     return (
         <Container>
@@ -47,7 +53,7 @@ export default function ExplorarConsultorios() {
                     <CardMedia
                     component="img"
                     sx={{ width: 250, margin:"15px", height:250}}
-                    image="/clinica_placeholder.jpg"
+                    image={`/${myimage(item.imagen_consultorio)}`}
                     variant="outlined"
                     />
 

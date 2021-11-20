@@ -44,6 +44,7 @@ export default function EditarMedicos() {
     nombre:"",
     fecha_nacimiento:"",
     email:"",
+    imagenchar:"",
     fkespecialidad:"",
     fkconsultorio:""
   });
@@ -69,6 +70,11 @@ export default function EditarMedicos() {
         [name]:value
     });
   };
+
+  const SingleFileChange = (e) => {
+    var fileName = e.target.files[0].name;
+    usuario.imagenchar = fileName;
+  }
   
   const handleSubmit = async (e) => {
     const token = await getTokenSilently();
@@ -145,7 +151,8 @@ export default function EditarMedicos() {
               </FormControl>
 
               <FormControl fullWidth sx={{m:1}}>
-              <TextField type="file" name="imagenchar" label="Foto de perfil:" variant="outlined" ></TextField>
+              <input accept="image/*" sx={{backgroundColor:"#FFFFFF"}} id="imagen" type="file" name="imagen_consultorio" label="Agregar imagen:" variant="outlined" 
+              onChange={(e) => SingleFileChange(e)}></input>
               </FormControl>
   
               <FormControl fullWidth sx={{mt:3}}>

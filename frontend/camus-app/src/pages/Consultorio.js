@@ -66,6 +66,13 @@ export default function Consultorio() {
          window.location.reload();
       };
 
+    function myimage(e){
+        if(e==""){
+            return "avatar_placeholder.jpg";
+        } else return e;
+
+    }
+
     useEffect(() => {
         async function fetchData(){
             const token = await getTokenSilently();
@@ -85,7 +92,7 @@ export default function Consultorio() {
                     <CardMedia
                     component="img"
                     sx={{ width: 400, margin:"15px", height:400}}
-                    image="/avatar_placeholder.jpg"
+                    image={`/${myimage(usuario.imagenchar)}`}
                     variant="outlined"
                     
                 />

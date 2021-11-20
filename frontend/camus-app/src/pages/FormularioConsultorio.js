@@ -27,8 +27,14 @@ export default function FormularioConsultorio() {
     ubicacion:"",
     hora_apertura:"",
     hora_cierre:"",
+    imagen_consultorio:"",
     precio_consulta:""
 });
+
+const SingleFileChange = (e) => {
+  var fileName = e.target.files[0].name;
+  consultorio.imagen_consultorio = fileName;
+}
 
 const handleChange = (e) => {
   const {name, value} = e.target;
@@ -82,7 +88,8 @@ const handleSubmit = async (e) => {
             </FormControl>
 
             <FormControl fullWidth sx={{m:1}}>
-            <TextField sx={{backgroundColor:"#FFFFFF"}} type="file" name="imagen_consultorio" label="Agregar imagen:" variant="outlined" ></TextField>
+            <input accept="image/*" sx={{backgroundColor:"#FFFFFF"}} id="imagen" type="file" name="imagen_consultorio" label="Agregar imagen:" variant="outlined" 
+            onChange={(e) => SingleFileChange(e)}></input>
             </FormControl>
 
             <FormControl sx={{m:1, mb:5}}>
