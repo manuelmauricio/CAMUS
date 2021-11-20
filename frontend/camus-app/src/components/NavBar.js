@@ -54,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const ColorButton = styled(Button)(({ theme }) => ({
-    color: "#b5d1d3",
+    color: "#FFFFFF",
     backgroundColor: "#4d9296",
     '&:hover': {
       backgroundColor: "#23585b",
@@ -101,13 +101,7 @@ export default function NavBar(props) {
                         text: "Laboratorios",
                         url: "/ExplorarLaboratorios",
                       
-                    },
-                    {
-                      /*
-                        text: "Pacientes",
-                        url: "/Pacientes",
-                      */
-                    },
+                    }
                 ].map((item, index) => (
                     <ColorButton variant="text"component={Link} to={item.url}>{item.text}</ColorButton>                
                 ))}
@@ -119,16 +113,9 @@ export default function NavBar(props) {
 
             </Grid>
             <Grid item xs>
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <Search>
-                <SearchIconWrapper>
-                <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                placeholder="Buscar..."
-                inputProps={{ 'aria-label': 'Buscar' }}
-                />
-          </Search>
+
+            <Box sx={{ display: { xs: 'none', md: 'flex' } }} justifyContent="right" alignItems="right"> 
+
           
           <ColorButton variant="text"component={Link} to={"/logout"}>Cerrar Sesión</ColorButton>  
           </Box>
