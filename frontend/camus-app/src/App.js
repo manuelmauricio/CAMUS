@@ -24,6 +24,7 @@ import ExplorarConsultorios from './pages/ExplorarConsultorios';
 import ExplorarMedicos from './pages/ExplorarMedicos';
 import ExplorarMedicosEspecialidad from './pages/ExplorarMedicosEspecialidad';
 import EditarMedicos from './pages/EditarMedicos';
+import EditarLaboratorio from './pages/EditarLaboratorio';
 
 import TopBar from './components/TopBar';
 import { Fragment } from 'react';
@@ -55,6 +56,7 @@ function App() {
             <PrivateRoute exact path="/RegistroDeMedicos" component={RegistroDeUsuarios} />
             <PrivateRoute exact path="/Consultorio/:id" component={Consultorio} />
             <PrivateRoute exact path="/EditarMedicos/:id" component={EditarMedicos} />
+            <PrivateRoute exact path="/EditarLaboratorio/:id" component={EditarLaboratorio} />
             <PrivateRoute exact path="/ModificarPerfilMedico" component={ModificarPerfilMedico} />
             <PrivateRoute exact path="/Laboratorio/:id" component={Laboratorio} />
             <PrivateRoute exact path="/FormularioLaboratorio" component={FormularioLaboratorio} />

@@ -89,6 +89,39 @@ export const GetLaboratorio = async (id,token) => {
     }
 }
 
+export const UpdateLaboratorio = async (id,usuario,token) => {
+    try{
+        const response = await axios.put(`/laboratorio/${id}`, usuario, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("updateLaboratorioResp", response);
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
+
+export const DeleteLaboratorio = async (id,token) => {
+    try{
+        const response = await axios.delete(`/laboratorio/${id}`, {
+            // request config
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log("getLaboratorioResp", response);
+        return response.data;
+    }
+    catch(error){
+        console.error(error);
+        return error;
+    }
+}
+
 //COLECCIÓN CONSULTORIO
 export const CreateConsultorio = async (consultorio,token) => {
     try{

@@ -14,6 +14,8 @@ import { FormControl } from '@mui/material';
 import {useParams} from "react-router-dom";
 import { GetLaboratorio } from '../api/CAMUSAPI';
 import { useAuth0 } from '../hooks/react-auth0-spa';
+import { Link } from 'react-router-dom';
+
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: "#FFFFFF",
@@ -74,6 +76,9 @@ export default function Laboratorio() {
                         <Typography component="div" sx={{mt:2}}>
                             Precio Exámenes: ${laboratorio.precio_consulta}
                         </Typography>
+
+                        <ColorButton  component={Link} to={`/EditarLaboratorio/${id}`} variant="contained" sx={{mt:2}}>Editar...</ColorButton>
+
                         </CardContent>
                     </Box>
             </Card>
